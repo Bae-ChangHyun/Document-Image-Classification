@@ -1,4 +1,6 @@
 # Document Image Classification | 문서 이미지 분류
+![ai stage](image-3.png)
+
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FBae-ChangHyun%2FDocument-Image-Classification&count_bg=%233D51C8&title_bg=%23555555&icon=github.svg&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 ![GitHub forks](https://img.shields.io/github/forks/Bae-ChangHyun/Document-Image-Classification)<br>
 프로젝트 기간: `Feb 05, 2024 ~ Feb 19, 2024`
@@ -35,6 +37,12 @@ Document Image Classification 경진대회는 주어진 데이터를 활용하�
 
 --> 17개 class의 문서 이미지를 분류
 
+- 자동차 번호판 | 주민등록증 | 운전면허증
+- 입/퇴원 확인서 | 계좌번호 | 건강보험 신청서
+- 진단서 | 통원/진료 확인서 | 여권
+- 진료비 확인서 | 약제비 영수증 | 처방전
+- 이력서 | 소견서 | 자동차 등록증
+
 ### 1-3. Evaluation metric
 
 $$ F1_{\text{macro}} = \frac{1}{N} \sum_{i=1}^{N} F1_i $$
@@ -46,7 +54,7 @@ $$ F1_{\text{macro}} = \frac{1}{N} \sum_{i=1}^{N} F1_i $$
 ├── data                    
 │   ├── meta.csv
 │   ├── train
-│   ├── test
+│   ├── test 
 │   ├── train.csv
 │   └── test.csv
 ├── code
@@ -73,20 +81,22 @@ $$ F1_{\text{macro}} = \frac{1}{N} \sum_{i=1}^{N} F1_i $$
 ## 3. Data Augentation
 
 Augraphy + Albumentations + Mixup
+
+1,570장의 Train 이미지를 클래스별 가중치를 이용하여 54,380장으로 증강
  
 ## 4. Modeling
 
 ### 4-1. Model
-[resnet50](https://huggingface.co/docs/timm/models/resnet)
+[Resnet50](https://huggingface.co/docs/timm/models/resnet)
 
 ### 4-2. Parameter
 image size = `224`,`256`,`384` <br>
 batch size = `64`,`128`,`256`  <br>
-scheduler = `CosineAnnealing`, `ReduceLROnPateau`, `1e-4` <br>
+scheduler = `CosineAnnealing`, `ReduceLROnPlateau`, `1e-4` <br>
 Optimizer = `Adam` <br>
 Loss function = `CrossEntropy Loss`, `Focal Loss` <br>
 
---> Experiment Record:[![WANDB](https://img.shields.io/badge/WANDB-FFBE00?style=flat-square&logo=weightsandbiases&logoColor=black)](https://wandb.ai/bae951753/Docs%20Image%20Classifications?workspace=user-bae951753)
+--> Experiment Record->  [![WANDB](https://img.shields.io/badge/WANDB-FFBE00?style=flat-square&logo=weightsandbiases&logoColor=black)](https://wandb.ai/bae951753/Docs%20Image%20Classifications?workspace=user-bae951753)
 
 ## 5. Ensemble
 
@@ -96,23 +106,28 @@ Test Time Augmentation with ttach library
 ### 5-2. Voting
 Hard voting + weighted soft voting
 
+|  |  |
+|---|---|
+| ![TTA](image-1.png) | ![Voting](image-2.png) |
+
 ## 6. Result
 
 ### 6-1. Leader Board
 - Rank:2
 - Public Score:0.9610 (5th)
 - Private Score:0.9594 (2nd)
-- ![image](image.png)
+![image](image.png)
 
 ### 6-2. Reference
 - [fastdup](https://github.com/visual-layer/fastdup)
 - [augraphy](https://github.com/sparkfish/augraphy)
 - [albumentations](https://github.com/albumentations-team/albumentations)
 - [focal loss](https://github.com/mathiaszinnen/focal_loss_torch)
+- [timm](https://huggingface.co/timm)
 
 ## 🛠 Tech Stack 🛠
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white)]()
 [![Pytorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=PyTorch&logoColor=white)]()
 [![Linux](https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)]()
 [![OpenCV](https://img.shields.io/badge/opencv-5C3EE8?style=for-the-badge&logo=opencv&logoColor=black)]()
-[![WANDB](https://img.shields.io/badge/WANDB-FFBE00?style=flat-square&logo=weightsandbiases&logoColor=black)]()
+[![WANDB](https://img.shields.io/badge/WANDB-FFBE00?style=for-the-badge&logo=weightsandbiases&logoColor=black)]()
