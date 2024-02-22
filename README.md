@@ -1,7 +1,14 @@
 # Document Image Classification | 문서 이미지 분류
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FBae-ChangHyun%2Fapart_price_predict&count_bg=%23003BE7&title_bg=%23555555&icon=github.svg&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
-![GitHub forks](https://img.shields.io/github/forks/Bae-ChangHyun/apart_price_predict) <br>
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FBae-ChangHyun%2FDocument-Image-Classification&count_bg=%233D51C8&title_bg=%23555555&icon=github.svg&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+![GitHub forks](https://img.shields.io/github/forks/Bae-ChangHyun/Document-Image-Classification) <br>
 프로젝트 기간: `Feb 05, 2024 ~ Feb 19, 2024`
+
+## 목차
+ - [Competetion Info](#1-competetion-info)
+ - [Directory](#2-directory)
+ - [Data description](#3-data-descrption)
+ - [Modeling](#4-modeling)
+ - [Result](#5-result)
 
 
 ### 0. Environment
@@ -10,7 +17,16 @@
 
 ## 1. Competetion Info
 
-### 1-1 Overview
+주최: Upstage + Fastcampus on [Aistages](https://stages.ai/)
+
+## 1-1. Team
+
+|![image](https://github.com/UpstageAILab/upstage-cv-classification-cv5/assets/96022213/9233ab6e-25d5-4c16-8dd4-97a7b8535baf) |![image](https://github.com/UpstageAILab/upstage-cv-classification-cv5/assets/96022213/e7394268-0f94-4468-8cf5-3cf67e4edd07) | ![image](https://github.com/UpstageAILab/upstage-cv-classification-cv5/assets/96022213/9c75cbd9-f409-4fdd-a5c3-dec082ade3bf) | ![image](https://github.com/UpstageAILab/upstage-cv-classification-cv5/assets/96022213/388eac05-7cd9-4688-8a87-5b6b742715cf) |![image](https://github.com/UpstageAILab/upstage-cv-classification-cv5/assets/96022213/48dd674c-ab93-48d1-9e05-e7e8e402597c) |![image](https://github.com/UpstageAILab/upstage-cv-classification-cv5/assets/96022213/0a524747-a854-4eee-95b6-108c84514df8) |
+| :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: |
+|            [최장원](https://github.com/UpstageAILab)             |            [김영천](https://github.com/UpstageAILab)             |            [배창현](https://github.com/UpstageAILab)             |            [박성우](https://github.com/UpstageAILab)             |            [조예람](https://github.com/huB-ram)             |            [이소영B](https://github.com/UpstageAILab)             |
+|                            팀장                            |                            팀원                             |                            팀원                             |                            팀원                             |                            팀원                             |                            팀원                             |
+
+### 1-2. Overview
 
 Document Image Classification 경진대회는 주어진 데이터를 활용하여 다양한 종류의 문서 이미지의 클래스를 예측.
 
@@ -18,42 +34,37 @@ Document Image Classification 경진대회는 주어진 데이터를 활용하�
 
 의료, 금융 등 여러 비즈니스 분야의 대량의 문서 이미지를 식별하고 자동화하는 것이 중요.
 
-### 1-2 Evaluation metric
+### 1-3. Evaluation metric
 
-$$ \text{F1-Macro} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2} $$
+$$ F1_{\text{macro}} = \frac{1}{N} \sum_{i=1}^{N} F1_i $$
 
-## 2. Components
+## 2. Directory
 
-### Directory
 ```bash
+// 저작권으로 인해 데이터 셋은 업로드하지 않습니다.
 ├── data                    
-│   ├── meta.csv : 문서의 실제 클래스와 인코딩된 라벨 매핑
-│   ├── train: 문서 이미지 1570장
-│   ├── test: 문서 이미지 3140장 
-│   ├── train.csv: train 데이터의 파일명과 라벨
-│   └── sample_submission.csv: test 데이터의 파일명
+│   ├── meta.csv
+│   ├── train
+│   ├── test
+│   ├── train.csv
+│   └── test.csv
 ├── code
 │──  └── Doc_classification.ipynb
 └──  └── Doc_classification(wandb).ipynb
-// 저작권으로 인해 데이터 셋은 업로드하지 않습니다.
 ```
 
 ## 3. Data descrption
 
-`Train data`
-: (1118822,52) / 2007.01.01~2023.06.30 기간의 아파트 정보 및 실거래가 <br>
-`Test data`
-: (9272,51) / 2023.07.01~2023.09.26 기간의 아파트 정보 <br>
-`seoul_bus`
-: (       ) / 서울의 버스 정류소번호, 정류소명, 경위도, 정류소 타입 <br>
-`seoul_subway`
-:(        ) / 서울 지하철 역사ID, 역사명, 호선, 경위도 <br>
-`price_index`
-:(        ) / 2007.01~2023.06의 서울 아파트 실거래가격지수 <br>
-`interest_rate`
-:(        ) / 2007.01~2023.06의 대출금리 및 (   ) <br>
-`family_income`
-:(        )  / ( )  
+`train.csv`
+: (1570,2) / train 데이터 이미지 경로와 해당 이미지의 라벨<br>
+`test.csv`
+: (3140,2) / test 데이터 이미지 경로와 해당 이미지의 라벨 <br>
+`Doc_classification.ipynb`
+: 모델링 및 전체 코드 <br>
+`Doc_classification(wandb).ipynb`
+:wandb에 자동으로 기록하는 모델 실험용 전체 코드 <br>
+`sub.ipynb`
+:데이터 증강 및 분할 등 sub 코드 <br>
  
 ## 4. Modeling
 
@@ -83,11 +94,6 @@ $$ \text{F1-Macro} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2} $$
 
 ### 5-2 Presentation
 - _Insert your presentaion file(pdf) link_
-
-## Team
-| :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: |
-|            [최장원](https://github.com/UpstageAILab)             |            [김영천](https://github.com/UpstageAILab)             |            [배창현](https://github.com/UpstageAILab)             |            [박성우](https://github.com/UpstageAILab)             |            [조예람](https://github.com/huB-ram)             |            [이소영B](https://github.com/UpstageAILab)             |
-|                            팀장                            |                            팀원                             |                            팀원                             |                            팀원                             |                            팀원                             |                            팀원                             |
 
 ### Reference
 - [실거래가: 국토교통부](https://www.kiep.go.kr/menu.es?mid=a10602010000)
