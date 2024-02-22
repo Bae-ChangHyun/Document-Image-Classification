@@ -92,8 +92,9 @@ EDA를 바탕으로 Test data와 유사한 형태의 Augmentation 진행
 ## 4. Modeling
 
 ### 4-1. Model
-[Resnet50](https://huggingface.co/docs/timm/models/resnet)
 ![alt text](image/resnet50.png)
+
+[Resnet50](https://huggingface.co/docs/timm/models/resnet)
 
 ### 4-2. Parameter
 image size = `224`,`256`,`384` <br>
