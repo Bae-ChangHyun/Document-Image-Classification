@@ -87,7 +87,7 @@ EDA를 바탕으로 Test data와 유사한 형태의 Augmentation 진행
 
 | | | |
 |---|---|---|
-| <img src="![augraphy](image/augraphy.png)" alt="augraphy" width="300"/> | <img src="![albumentation](image/albumentation.png)" alt="albumentation" width="300"/> | <img src="![mixup](image/mixup.png)" alt="mixup" width="300"/>
+| <img src="image/augraphy.png" alt="augraphy" width="300"/> | <img src="image/albumentation.png" alt="albumentation" width="300"/> | <img src="image/mixup.png" alt="mixup" width="300"/>
  
 ## 4. Modeling
 
