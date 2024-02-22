@@ -82,7 +82,12 @@ $$ F1_{\text{macro}} = \frac{1}{N} \sum_{i=1}^{N} F1_i $$
 
 Augraphy + Albumentations + Mixup
 
-1,570장의 Train 이미지를 클래스별 가중치를 이용하여 54,380 장으로 증강
+EDA를 바탕으로 Test data와 유사한 형태의 Augmentation 진행
+1,570장의 Train 이미지를 클래스별 가중치를 적용하여 54,380 장으로 증강
+
+| | | |
+|---|---|---|
+| <img src="![augraphy](image/augraphy.png)" alt="augraphy" width="300"/> | <img src="![albumentation](image/albumentation.png)" alt="albumentation" width="300"/> | <img src="![mixup](image/mixup.png)" alt="mixup" width="300"/>
  
 ## 4. Modeling
 
@@ -102,6 +107,7 @@ Experiment Record: Click Here -->  [![WANDB](https://img.shields.io/badge/WANDB-
 
 ### 5-1. TTA
 Test Time Augmentation with ttach library
+-> HorizontaFlip & VerticalFlip with Merge modes=mean
 
 ### 5-2. Voting
 Hard voting + weighted soft voting
