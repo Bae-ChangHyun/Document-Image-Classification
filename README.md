@@ -1,5 +1,5 @@
 # Document Image Classification | 문서 이미지 분류
-![ai stage](image-3.png)
+![ai stage](image/image-3.png)
 
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FBae-ChangHyun%2FDocument-Image-Classification&count_bg=%233D51C8&title_bg=%23555555&icon=github.svg&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 ![GitHub forks](https://img.shields.io/github/forks/Bae-ChangHyun/Document-Image-Classification)<br>
@@ -71,9 +71,9 @@ $$ F1_{\text{macro}} = \frac{1}{N} \sum_{i=1}^{N} F1_i $$
 : (3140,2) / test 데이터 이미지 경로와 해당 이미지의 라벨 <br>
 `meta.csv`
 : (17,2) / 이미지의 실제 클래스와 인코딩된 라벨 <br>
-`Doc_classification.ipynb`
+`Main.ipynb`
 : 모델링 및 전체 코드 <br>
-`Doc_classification(wandb).ipynb`
+`Main with Wandb.ipynb`
 :wandb에 자동으로 기록하는 모델 실험용 전체 코드 <br>
 `sub.ipynb`
 :데이터 증강 및 분할 등 sub 코드 <br>
@@ -108,7 +108,7 @@ Hard voting + weighted soft voting
 
 | | |
 |---|---|
-| <img src="image-1.png" alt="TTA" width="400"/> | <img src="image-2.png" alt="Voting" width="400"/> |
+| <img src="image/image-1.png" alt="TTA" width="400"/> | <img src="image/image-2.png" alt="Voting" width="400"/> |
 
 ## 6. Result
 
@@ -116,7 +116,7 @@ Hard voting + weighted soft voting
 - Final Rank: 2nd
 - Public Score:0.9610 (5th)
 - Private Score:0.9594 (2nd)
-![image](image.png)
+![image](image/image.png)
 
 ### 6-2. Reference
 - [fastdup](https://github.com/visual-layer/fastdup)
@@ -124,6 +124,7 @@ Hard voting + weighted soft voting
 - [albumentations](https://github.com/albumentations-team/albumentations)
 - [focal loss](https://github.com/mathiaszinnen/focal_loss_torch)
 - [timm](https://huggingface.co/timm)
+- [ttach](https://github.com/qubvel/ttach)
 
 ## 🛠 Tech Stack 🛠
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white)]()
