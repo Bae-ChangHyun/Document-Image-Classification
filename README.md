@@ -19,7 +19,11 @@
 
 ## 1. Competetion Info
 
-주최: Upstage + Fastcampus on [Aistages](https://stages.ai/)
+주최: Upstage + Fastcampus on Aistages <br>
+
+| <img src="image/fastcampus.png" alt="Fastcampus" width="200"/> | <img src="image/aistage.png" alt="aistages" width="200"/> |
+|------------------------------------------------------------------|------------------------------------------------------------------|
+| Fastcampus       
 
 ### 1-1. Team
 
