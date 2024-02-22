@@ -53,8 +53,8 @@ $$ F1_{\text{macro}} = \frac{1}{N} \sum_{i=1}^{N} F1_i $$
 // 저작권으로 인해 데이터 셋은 업로드하지 않습니다.
 ├── data                    
 │   ├── meta.csv
-│   ├── train
-│   ├── test 
+│   ├── train/
+│   ├── test/ 
 │   ├── train.csv
 │   └── test.csv
 ├── code
@@ -78,11 +78,11 @@ $$ F1_{\text{macro}} = \frac{1}{N} \sum_{i=1}^{N} F1_i $$
 `sub.ipynb`
 :데이터 증강 및 분할 등 sub 코드 <br>
 
-## 3. Data Augentation
+## 3. Data Augmentation
 
 Augraphy + Albumentations + Mixup
 
-1,570장의 Train 이미지를 클래스별 가중치를 이용하여 54,380장으로 증강
+1,570장의 Train 이미지를 클래스별 가중치를 이용하여 54,380 장으로 증강
  
 ## 4. Modeling
 
@@ -96,7 +96,7 @@ scheduler = `CosineAnnealing`, `ReduceLROnPlateau`, `1e-4` <br>
 Optimizer = `Adam` <br>
 Loss function = `CrossEntropy Loss`, `Focal Loss` <br>
 
---> Experiment Record->  [![WANDB](https://img.shields.io/badge/WANDB-FFBE00?style=flat-square&logo=weightsandbiases&logoColor=black)](https://wandb.ai/bae951753/Docs%20Image%20Classifications?workspace=user-bae951753)
+Experiment Record: Click Here -->  [![WANDB](https://img.shields.io/badge/WANDB-FFBE00?style=flat-square&logo=weightsandbiases&logoColor=black)](https://wandb.ai/bae951753/Docs%20Image%20Classifications?workspace=user-bae951753)
 
 ## 5. Ensemble
 
@@ -106,14 +106,14 @@ Test Time Augmentation with ttach library
 ### 5-2. Voting
 Hard voting + weighted soft voting
 
-|  |  |
+| | |
 |---|---|
-| ![TTA](image-1.png) | ![Voting](image-2.png) |
+| <img src="image-1.png" alt="TTA" width="400"/> | <img src="image-2.png" alt="Voting" width="400"/> |
 
 ## 6. Result
 
 ### 6-1. Leader Board
-- Rank:2
+- Final Rank: 2nd
 - Public Score:0.9610 (5th)
 - Private Score:0.9594 (2nd)
 ![image](image.png)
