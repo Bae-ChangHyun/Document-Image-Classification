@@ -86,6 +86,8 @@ scheduler = `CosineAnnealing`, `ReduceLROnPateau`, `1e-4` <br>
 Optimizer = `Adam` <br>
 Loss function = `CrossEntropy Loss`, `Focal Loss` <br>
 
+--> Experiment Record: [![WANDB](https://img.shields.io/badge/WANDB-#FFBE00?style=for-the-badge&logo=weightsandbiases&logoColor=black)](https://wandb.ai/bae951753/Docs%20Image%20Classifications?workspace=user-bae951753)
+
 ## 5. Ensemble
 
 ### 5-1. TTA
@@ -112,3 +114,4 @@ Hard voting + weighted soft voting
 [![Pytorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=PyTorch&logoColor=white)]()
 [![Linux](https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=linux&logoColor=black")]()
 [![OpenCV](https://img.shields.io/badge/opencv-5C3EE8?style=for-the-badge&logo=opencv&logoColor=black)]()
+[![WANDB](https://img.shields.io/badge/WANDB-#FFBE00?style=for-the-badge&logo=weightsandbiases&logoColor=black)]()
